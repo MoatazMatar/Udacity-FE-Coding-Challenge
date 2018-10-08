@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TokenInterceptorService, AuthService } from './shared/';
+import { LoginRegisterModule } from './login/login-register.module';
+import { UsersModule } from './users/users.module';
 
 @NgModule({
   declarations: [
@@ -10,9 +13,11 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LoginRegisterModule,
+    UsersModule
   ],
-  providers: [],
+  providers: [AuthService, TokenInterceptorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
